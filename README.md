@@ -5,7 +5,7 @@
 ## Prototype
 
 ![Capture2](https://user-images.githubusercontent.com/117777716/217922244-1a7c38b6-e161-490b-a2f8-f513375f19fe.PNG)
-![Capture1](https://user-images.githubusercontent.com/117777716/217922087-f4ebfcef-81d9-43a7-914b-40eeb38f8c15.PNG)
+![Capture3](https://user-images.githubusercontent.com/117777716/217956728-12532837-0e7d-4c21-ac26-25717ed67857.PNG)
 
 ## Spike
 
