@@ -1,4 +1,4 @@
-# Atlas Aventure
+# Atlas Adventure
 
 ## Table of Contents
 
