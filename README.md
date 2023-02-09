@@ -18,9 +18,9 @@
 - How can we find out *why* our page doesn’t look right?
   - Looking on developer tools and taking note of what element CSS styles have strikehtroughs, or aren't displaying correctly
   - Developer tools console - allowing us to write debug code within the browser and test it (either in JS or CSS format)
-  - Other free debugging tools such as ![Lambda Test](https://www.lambdatest.com/lt-debug)
+  - Other free debugging tools such as [Lambda Test](https://www.lambdatest.com/lt-debug)
 
-  ### Asynchronous JavaScript
+### Asynchronous JavaScript
 - Synchronous code is executed in a sequential order, meaning that each line of code must be completed before moving on to the next line
 - Asynchronous code is executed out of order, meaning that the program does not have to wait for the current line of code to finish executing before moving on to the next line 
 - Synchronous code is sometimes referred to as "blocking" because it blocks the program from moving forward until the current line of code has finished executing
