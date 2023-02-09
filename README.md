@@ -2,6 +2,11 @@
 
 ## Table of Contents
 
+## Prototype
+
+![Capture2](https://user-images.githubusercontent.com/117777716/217922244-1a7c38b6-e161-490b-a2f8-f513375f19fe.PNG)
+![Capture1](https://user-images.githubusercontent.com/117777716/217922087-f4ebfcef-81d9-43a7-914b-40eeb38f8c15.PNG)
+
 ## Spike
 
 ### What console methods are there other than .log()?
