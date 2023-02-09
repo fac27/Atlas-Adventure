@@ -1,4 +1,4 @@
-# mabs-meals
+# Atlas Aventure
 
 ## Table of Contents
 
