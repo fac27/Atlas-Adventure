@@ -61,7 +61,7 @@
 
 ## How to Install
 
-- Clone the repo using your terminal (the download is 3.7MB in size):
+- Clone the repo using your terminal:
 
     `git clone https://github.com/fac27/Atlas-Adventure`
 
