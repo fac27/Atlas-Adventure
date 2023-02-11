@@ -1,15 +1,12 @@
 /* Default css */
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
 
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Titillium Web', sans-serif;
 }
-
-/* Individual classes to apply to any element on page */
 
 /* Colour variables*/
 
@@ -20,12 +17,52 @@
     --teal: #008080;
   }
 
+/* Individual classes to apply to any element on page */
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-evenly{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container{
+    width: 100%;
+    height: auto;
+    background-color: blanchedalmond;
+    border: var(--charcoal);
+
+}
+
+.padding-sm{
+    padding: 10px 5px;
+
+}
+
+.padding-m{
+    padding: 15px 5px;
+}
+
+.padding-l{
+    padding: 20px 5px;
+}
 /* Navigation/Header section */
 
 a {
     text-decoration: none;
     color: inherit;
     }
+
   .nav-toggle{
         display: none;
     }
@@ -33,23 +70,7 @@ a {
         display: none;
     }
 
-    .flexCenter{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .flex-between{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .flex-evenly{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
+  
 
     /* header section */
 header{
@@ -61,27 +82,24 @@ header{
     }
 nav{
         width: 50%;
-}
+    }
 
 .navigation{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         flex-direction: row;
         height: 100%;
+        color: white;
         list-style: none;
         padding: 0;
-        margin-right: 100px;
-        font-size: larger;
-        color: var(--white);
     }
 .navigation li{
         margin: 0px 10px;
     }
 .Logo{
         max-width: 45%;
-}
-
+    }
 
     /* Main section */
 
@@ -89,6 +107,7 @@ nav{
         width: 100%;
         min-height: 70vh;
         height: auto;
+        flex-direction: column;
      }
     
      .startScreen{
@@ -110,6 +129,11 @@ nav{
         color: white;
      }
 
+     .GameScreen{
+        width: 90%;
+        height: 100vh;
+        background-color: red;
+     }
 
 @media (max-width: 650px) {
     /* Header/nav css */
@@ -132,7 +156,7 @@ nav{
     position: absolute;
     top: 100%;
     left: 0%;
-    background-color: var(--charcoal);
+    background-color: #191A1C;
     transform: scale(0, 1);
     transform-origin: left;
     transition: transform 400ms ease-in-out;
@@ -157,7 +181,9 @@ nav{
  }
 
 
+
+
+
   /* end of Main/game screen css */
   }
-
   
