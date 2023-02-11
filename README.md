@@ -27,6 +27,8 @@
     3. A game screen, displaying country facts, images, and flags
     4. A success/fail screen, showing the users points tally and letting them continue to the next challenge
 
+### Wireframes
+
 ![Capture2](https://user-images.githubusercontent.com/117777716/217922244-1a7c38b6-e161-490b-a2f8-f513375f19fe.PNG)
 ![Capture3](https://user-images.githubusercontent.com/117777716/217956728-12532837-0e7d-4c21-ac26-25717ed67857.PNG)
 
