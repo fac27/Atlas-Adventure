@@ -1,17 +1,31 @@
 /* Default css */
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
 
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Titillium Web', sans-serif;
 }
+
+/* Individual classes to apply to any element on page */
+
+/* Colour variables*/
+
+:root {
+    --black: #000000;
+    --charcoal: #191A1C;
+    --white: #ffffff;
+    --teal: #008080;
+  }
+
+/* Navigation/Header section */
+
 a {
     text-decoration: none;
     color: inherit;
     }
-
   .nav-toggle{
         display: none;
     }
@@ -47,24 +61,27 @@ header{
     }
 nav{
         width: 50%;
-    }
+}
 
 .navigation{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         flex-direction: row;
         height: 100%;
-        color: white;
         list-style: none;
         padding: 0;
+        margin-right: 100px;
+        font-size: larger;
+        color: var(--white);
     }
 .navigation li{
         margin: 0px 10px;
     }
 .Logo{
         max-width: 45%;
-    }
+}
+
 
     /* Main section */
 
@@ -115,7 +132,7 @@ nav{
     position: absolute;
     top: 100%;
     left: 0%;
-    background-color: #191A1C;
+    background-color: var(--charcoal);
     transform: scale(0, 1);
     transform-origin: left;
     transition: transform 400ms ease-in-out;
@@ -142,4 +159,5 @@ nav{
 
   /* end of Main/game screen css */
   }
+
   
