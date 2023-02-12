@@ -25,8 +25,17 @@ stating "you choose correct country" and vise versa
 
 /*  function() {} if users selected option is incorrect make scoreboard go to 0 and display startgame screen*/
 
+const imageContainer = document.querySelector("#imageContainer");
 
-
+window.addEventListener("resize", function() {
+    if (window.innerWidth < 650){
+        imageContainer.classList.remove("flex-Row");
+        imageContainer.classList.add("flex-column")
+    } else{
+        imageContainer.classList.remove("flex-column")
+        imageContainer.classList.add("flex-Row");
+    }
+  });
 
 
 

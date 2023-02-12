@@ -36,11 +36,20 @@
     align-items: center;
 }
 
+.flex-Row{
+    flex-direction: row;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
 .container{
     width: 100%;
     height: auto;
     background-color: blanchedalmond;
     border: var(--charcoal);
+    margin: 10px 0px;
 
 }
 
@@ -133,7 +142,21 @@ nav{
         width: 90%;
         height: 100vh;
         background-color: red;
+        text-align: center;
      }
+
+     figure{
+        width: 50%;
+        height: auto;
+        margin: 20px 0px;
+     }
+    
+     figure img{
+        width: 80%;
+        height: auto;
+        object-fit: contain;
+     }
+  
 
 @media (max-width: 650px) {
     /* Header/nav css */
@@ -178,6 +201,14 @@ nav{
 
  .startScreen{
     width: 90%;
+ }
+
+ figure{
+    width: 100%;
+ }
+
+ figure img{
+    width: 80%;
  }
 
 
