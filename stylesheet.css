@@ -65,6 +65,11 @@
 .padding-l{
     padding: 20px 5px;
 }
+
+.height-vh{
+    height: 100vh;
+}
+
 /* Navigation/Header section */
 
 a {
@@ -118,7 +123,7 @@ nav{
         height: auto;
         flex-direction: column;
      }
-    
+
      .startScreen{
         width: 60%;
         min-height: 70vh;
@@ -136,6 +141,12 @@ nav{
      .startScreen h1{
         width: 80%;
         color: white;
+     }
+
+     .loadingScreen{
+        background-color: turquoise;
+        width: 90%;
+        margin: 20px 0px;
      }
 
      .GameScreen{
