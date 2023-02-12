@@ -37,7 +37,35 @@ window.addEventListener("resize", function() {
     }
   });
 
+//   const array = [1,2,3,4,5,6,7,8,9]
+
+function rand1(array){
+    const countriesArray = [];
+ for(let i = 0; i< 2; i++){
+    const randomNumb = Math.floor(Math.random() * (array.length - 0 + 1) + 0);
+    countriesArray.push(array[randomNumb]);
+ }
+ return(countriesArray);
+}
+
+function rand2(array){
+    const randomNumb = Math.floor(Math.random() * (array.length - 0 + 1) + 0);
+    console.log(array[randomNumb])
+}
 
 
 
+
+function fetchCountryData(){
+    fetch('https://restcountries.com/v3.1/all')
+    .then(res => res.json())
+    .then(array => rand1(array))
+    .then(array2 => rand2(array2))
+    .catch((error) => console.log(error))
+}
+
+
+
+
+fetchCountryData()
 
