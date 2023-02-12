@@ -41,16 +41,17 @@ window.addEventListener("resize", function() {
 
 function rand1(array){
     const countriesArray = [];
- for(let i = 0; i< 2; i++){
-    const randomNumb = Math.floor(Math.random() * (array.length - 0 + 1) + 0);
+ for(let i = 0; i < 2; i++){
+    // const randomNumb = Math.floor(Math.random() * (array.length - 0 + 1) + 0);
+    const randomNumb = Math.floor(Math.random()*array.length)
     countriesArray.push(array[randomNumb]);
  }
  return(countriesArray);
 }
 
 function rand2(array){
-    const randomNumb = Math.floor(Math.random() * (array.length - 0 + 1) + 0);
-    console.log(array[randomNumb])
+    const randomNumb = Math.floor(Math.random()*array.length)
+    console.log(array[randomNumb],randomNumb)
 }
 
 
