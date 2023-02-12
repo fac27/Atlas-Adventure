@@ -1,10 +1,10 @@
-// first fetch() to countries API - will generate up to 200 countries within an array when it is fetched
+// first fetch() to countries API - will generate up to 200 countries within an array when it is fetched ✅
 
-// function(){} randomiser function which selects 2 of the countries from the array
+// function(){} randomiser function which selects 2 of the countries from the array ✅
 
-// function(){} second randomiser would then choose one main country from the 2 selected
+// function(){} second randomiser would then choose one main country from the 2 selected ✅
 
-// function(){} create the DOM elements we need and append country information to these
+// function(){} create the DOM elements we need and append country information to these 
 
 /* function() {}We would now retrieve the name, region, currency and neighbouring countries properties, displaying this in the DOM using a
  div and assign the name property as the id for verifaction
