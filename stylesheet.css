@@ -167,7 +167,30 @@ nav{
         height: auto;
         object-fit: contain;
      }
-  
+
+     /* Style for the flag tooltip */
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: var(--black);
+    color: white;
+    padding: 5px 10px;
+}
+
+/* Show the flag tooltip on hover */
+
+div:hover .tooltip {
+    display: inline-block;
+    transform: translate(100px, 25px)
+}
+
+#flagContainer > div {
+    border: 1px solid var(--black);
+    width: 200px;
+    height: 125px;
+    align-items: center;
+}
 
 @media (max-width: 650px) {
     /* Header/nav css */
@@ -222,10 +245,17 @@ nav{
     width: 80%;
  }
 
+ #flagContainer > div:hover .tooltip {
+    display: inline-block;
+    transform: translate(20px, 5px);
+}
 
+#flagContainer > div {
+    border: 1px solid var(--black);
+    width: 20%;
+    height: 40px;
+    align-items: center;
+}
 
-
-
-  /* end of Main/game screen css */
-  }
-  
+/* end of Main/game screen css */
+}
