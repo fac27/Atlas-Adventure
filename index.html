@@ -22,17 +22,17 @@
     </label>
     </header>
     <main class="flexCenter">
-        <div class="startScreen flex-evenly">
+        <div id="startGameScreen" class="startScreen flex-evenly">
             <img class="Logo" src="assets\Logo.png" alt="Logo">
             <h1>Can You Guess the Country?</h1>
-            <button>Start Game</button>
+            <button id="startGameBtn">Start Game</button>
         </div>
-        <section class ="loadingScreen flex-evenly">
+        <section id="loadingScreen" class ="loadingScreen flex-evenly displayNone">
             <div class="flexCenter height-vh">
                 <div style="font-size: 36px; font-weight: bold;">3, 2, 1, Start!</div>
             </div>
         </section>
-        <section class="GameScreen">
+        <section id="game-Screen" class="GameScreen flex-evenly flex-column displayNone">
             <div class="container flex-evenly padding-l">
                 <h2>Fact 1: <span class="facts">Region</span></h2>
                 <h2>Fact 2: <span class="facts">Currency</span></h2>
@@ -61,7 +61,7 @@
                 </div>
             </section>
         </section>
-        <section class="continueScreen height-vh flex-between flex-column"> <!-- Elements to be updated programmatically by DOM functions -->
+        <section class="continueScreen height-vh flex-between flex-column displayNone"> <!-- Elements to be updated programmatically by DOM functions -->
             <div class="yourPoints margin-top-m">Your points that round</div>
             <div class="yourScore">Your total score</div>
             <img class="correctCountry" src="">
