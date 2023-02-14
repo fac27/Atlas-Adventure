@@ -1,9 +1,3 @@
-// first fetch() to countries API - will generate up to 200 countries within an array when it is fetched ✅
-
-// function(){} randomiser function which selects 2 of the countries from the array ✅
-
-// function(){} second randomiser would then choose one main country from the 2 selected ✅
-
 // function(){} create the DOM elements we need and append country information to these 
 
 /* function() {}We would now retrieve the name, region, currency and neighbouring countries properties, displaying this in the DOM using a
@@ -25,6 +19,10 @@ stating "you choose correct country" and vise versa
 
 /*  function() {} if users selected option is incorrect make scoreboard go to 0 and display startgame screen*/
 
+const count = 5;
+const apiKey = "5Jw2_Dj9jSVoB3h0kbFkucCmwcjCnWKKMbnMYT0sYyY";
+const apiURL = `https://api.unsplash.com/search/photos?&query=France&client_id=${apiKey}&count=${count}`;
+
 const imageContainer = document.querySelector("#imageContainer");
 
 window.addEventListener("resize", function() {
@@ -39,6 +37,9 @@ window.addEventListener("resize", function() {
 
 //   const array = [1,2,3,4,5,6,7,8,9]
 
+
+// function(){} randomiser function which selects 2 of the countries from the array, and puts these into an array 
+
 function rand1(array){
     const countriesArray = [];
  for(let i = 0; i < 2; i++){
@@ -49,13 +50,16 @@ function rand1(array){
  return(countriesArray);
 }
 
+
+// function(){} second randomiser would then choose one main country from the 2 selected 
+
 function rand2(array){
     const randomNumb = Math.floor(Math.random()*array.length)
     console.log(array[randomNumb],randomNumb)
 }
 
 
-
+// first fetch() to countries API - will generate up to 200 countries within an array when it is fetched
 
 function fetchCountryData(){
     fetch('https://restcountries.com/v3.1/all')
@@ -74,23 +78,23 @@ const loadingScreen = document.querySelector("#loadingScreen")
 const gameScreen = document.querySelector("#game-Screen")
 
 
-startgGameBtn.addEventListener("click", () => {
-    async function removeClasees() {
-        return startGameScreen.classList.add("displayNone");
-      }
-      removeClasees()
-      .then((x) => {
-        loadingScreen.classList.remove("displayNone")
-      })
-      .then((x) => {
-        setInterval(() => {
-            loadingScreen.classList.add("displayNone");
-            gameScreen.classList.remove("displayNone")
-        }, 3000);
-      })
-    
-    // // startGameScreen.classList.add("displayNone")
-    // loadingScreen.classList.remove("displayNone")
+// startgGameBtn.addEventListener("click", () => {
+//     async function removeClasees() {
+//         return startGameScreen.classList.add("displayNone");
+//       }
+//       removeClasees()
+//       .then((x) => {
+//         loadingScreen.classList.remove("displayNone")
+//       })
+//       .then((x) => {
+//         setInterval(() => {
+//             loadingScreen.classList.add("displayNone");
+//             gameScreen.classList.remove("displayNone")
+//         }, 3000);
+//       })
+//     // // startGameScreen.classList.add("displayNone")
+//     // loadingScreen.classList.remove("displayNone")
+// })
 
-})
+
 

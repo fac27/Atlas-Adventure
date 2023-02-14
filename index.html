@@ -27,12 +27,12 @@
             <h1>Can You Guess the Country?</h1>
             <button id="startGameBtn">Start Game</button>
         </div>
-        <section id="loadingScreen" class ="loadingScreen flex-evenly displayNone">
+        <section id="loadingScreen" class ="loadingScreen flex-evenly">
             <div class="flexCenter height-vh">
                 <div style="font-size: 36px; font-weight: bold;">3, 2, 1, Start!</div>
             </div>
         </section>
-        <section id="game-Screen" class="GameScreen flex-evenly flex-column displayNone">
+        <section id="game-Screen" class="GameScreen flex-evenly flex-column">
             <div class="container flex-evenly padding-l">
                 <h2>Fact 1: <span class="facts">Region</span></h2>
                 <h2>Fact 2: <span class="facts">Currency</span></h2>
@@ -48,20 +48,16 @@
             </div>
             <section id="flagContainer" class="container flex-evenly flex-Row padding-sm">
                 <div>Flag 1
-                    <img src="">
+                    <img class="flagImages" src="">
                     <div class="tooltip">flagName</div>
                 </div>
                 <div>Flag 2
-                    <img src="">
-                    <div class="tooltip">flagName</div>
-                </div>
-                <div>Flag 3
-                    <img src="">
+                    <img class="flagImages" src="">
                     <div class="tooltip">flagName</div>
                 </div>
             </section>
         </section>
-        <section class="continueScreen height-vh flex-between flex-column displayNone"> <!-- Elements to be updated programmatically by DOM functions -->
+        <section class="continueScreen height-vh flex-between flex-column"> Elements to be updated programmatically by DOM functions
             <div class="yourPoints margin-top-m">Your points that round</div>
             <div class="yourScore">Your total score</div>
             <img class="correctCountry" src="">
