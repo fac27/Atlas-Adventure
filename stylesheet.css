@@ -82,6 +82,14 @@ body{
     height: 100vh;
 }
 
+.margin-top-m{
+    margin-top: 20px;
+}
+
+.margin-bottom-m{
+    margin-bottom: 20px;
+}
+
 /* Navigation/Header section */
 
 a {
@@ -127,7 +135,7 @@ nav{
         max-width: 45%;
     }
 
-    /* Main section */
+/* Main section */
 
     main{
         width: 100%;
@@ -180,7 +188,7 @@ nav{
         object-fit: contain;
      }
 
-     /* Style for the flag tooltip */
+    /* Style for the flag tooltip */
 
 .tooltip {
     display: none;
@@ -202,6 +210,12 @@ div:hover .tooltip {
     width: 200px;
     height: 125px;
     align-items: center;
+}
+
+.continueScreen > div{
+    border: 1px solid var(--black);
+    width: 200px;
+    height: 125px;
 }
 
 @media (max-width: 650px) {

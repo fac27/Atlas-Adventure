@@ -28,38 +28,45 @@
             <button>Start Game</button>
         </div>
         <section class ="loadingScreen flex-evenly">
-        <div class="flexCenter height-vh">
-            <div style="font-size: 36px; font-weight: bold;">3, 2, 1, Start!</div>
-        </div>
+            <div class="flexCenter height-vh">
+                <div style="font-size: 36px; font-weight: bold;">3, 2, 1, Start!</div>
+            </div>
         </section>
         <section class="GameScreen">
-        <div class="container flex-evenly padding-l">
-            <h2>Fact 1: <span class="facts">Region</span></h2>
-            <h2>Fact 2: <span class="facts">Currency</span></h2>
-        </div>
-        <div id="imageContainer" class="container flex-evenly flex-Row padding-l">
-            <figure class="flexCenter">
-                <img src="https://images.unsplash.com/photo-1482160310982-3adf8b38daef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="image of country">
-            </figure>
+            <div class="container flex-evenly padding-l">
+                <h2>Fact 1: <span class="facts">Region</span></h2>
+                <h2>Fact 2: <span class="facts">Currency</span></h2>
+            </div>
+            <div id="imageContainer" class="container flex-evenly flex-Row padding-l">
+                <figure class="flexCenter">
+                    <img src="https://images.unsplash.com/photo-1482160310982-3adf8b38daef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="image of country">
+                </figure>
 
-            <figure class="flexCenter">
-                <img src="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwzMTE3Mjh8MHwxfHNlYXJjaHw2fHxGcmFuY2V8ZW58MHx8fHwxNjc2MTk2MzY3&ixlib=rb-4.0.3" alt="image of country">
-            </figure>
-        </div>
+                <figure class="flexCenter">
+                    <img src="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwzMTE3Mjh8MHwxfHNlYXJjaHw2fHxGcmFuY2V8ZW58MHx8fHwxNjc2MTk2MzY3&ixlib=rb-4.0.3" alt="image of country">
+                </figure>
+            </div>
+            <section id="flagContainer" class="container flex-evenly flex-Row padding-sm">
+                <div>Flag 1
+                    <img src="">
+                    <div class="tooltip">flagName</div>
+                </div>
+                <div>Flag 2
+                    <img src="">
+                    <div class="tooltip">flagName</div>
+                </div>
+                <div>Flag 3
+                    <img src="">
+                    <div class="tooltip">flagName</div>
+                </div>
+            </section>
         </section>
-        <section id="flagContainer" class="container flex-evenly flex-Row padding-sm">
-            <div>Flag 1
-                <img src="">
-                <div class="tooltip">flagName</div>
-            </div>
-            <div>Flag 2
-                <img src="">
-                <div class="tooltip">flagName</div>
-            </div>
-            <div>Flag 3
-                <img src="">
-                <div class="tooltip">flagName</div>
-            </div>
+        <section class="continueScreen height-vh flex-between flex-column"> <!-- Elements to be updated programmatically by DOM functions -->
+            <div class="yourPoints margin-top-m">Your points that round</div>
+            <div class="yourScore">Your total score</div>
+            <img class="correctCountry" src="">
+            <p id="countryNameText">correctCountry</p>
+            <button class="continue padding-sm margin-bottom-m">Continue</button>
         </section>
     </main>
     <script src="app.js"></script>
