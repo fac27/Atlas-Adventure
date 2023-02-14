@@ -65,8 +65,32 @@ function fetchCountryData(){
     .catch((error) => console.log(error))
 }
 
-
-
-
 fetchCountryData()
+
+// Event Listeners
+const startgGameBtn = document.querySelector("#startGameBtn");
+const startGameScreen = document.querySelector("#startGameScreen");
+const loadingScreen = document.querySelector("#loadingScreen")
+const gameScreen = document.querySelector("#game-Screen")
+
+
+startgGameBtn.addEventListener("click", () => {
+    async function removeClasees() {
+        return startGameScreen.classList.add("displayNone");
+      }
+      removeClasees()
+      .then((x) => {
+        loadingScreen.classList.remove("displayNone")
+      })
+      .then((x) => {
+        setInterval(() => {
+            loadingScreen.classList.add("displayNone");
+            gameScreen.classList.remove("displayNone")
+        }, 3000);
+      })
+    
+    // // startGameScreen.classList.add("displayNone")
+    // loadingScreen.classList.remove("displayNone")
+
+})
 
