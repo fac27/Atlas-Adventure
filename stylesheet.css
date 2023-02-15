@@ -173,15 +173,16 @@ nav{
      }
 
      figure{
-        width: 50%;
-        height: auto;
+        width: 400px;
+        height: 400px;
         margin: 20px 0px;
+        overflow: hidden;
      }
     
-     figure img{
+     .LocationImg{
         width: 80%;
-        height: auto;
-        object-fit: contain;
+        height: 80%;
+        object-fit: cover;
      }
 
     /* Style for the flag tooltip */
@@ -206,7 +207,23 @@ div:hover .tooltip {
     width: 200px;
     height: 125px;
     align-items: center;
+    position: relative;
 }
+
+.flagImages {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.flagName{
+position: absolute;
+top: -30;
+left: 0;
+color: red;
+}
+
+
 
 .continueScreen > div{
     border: 1px solid var(--black);
