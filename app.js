@@ -154,7 +154,7 @@ fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common
 // function(){} randomiser function which selects 2 of the countries from the array, and puts these into the  
 function rand1(array){
     const countriesArray = [];
- for(let i = 0; i < 2; i++){
+ for(let i = 0; i < 4; i++){
     // const randomNumb = Math.floor(Math.random() * (array.length - 0 + 1) + 0);
     const randomNumb = Math.floor(Math.random()*array.length)
     countriesArray.push(array[randomNumb]);
