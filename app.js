@@ -34,17 +34,31 @@ const countdownEl = document.getElementById('countdown');
 let timeLeft = 30;
 let chosenCountry;
 
+
+
 function timer(){
     const countdown = setInterval(() => {
-        if (timeLeft <= 0) {
-          clearInterval(countdown);
-          countdownEl.innerHTML = "Time's up!";
-        } else {
-          countdownEl.innerHTML = `${timeLeft} seconds left`;
-        }
-        timeLeft -= 1;
-      }, 1000);
+  if (timeLeft <= 0) {
+    clearInterval(countdown);
+    countdownEl.innerHTML = "Time's up!";
+    } else {
+    countdownEl.innerHTML = `${timeLeft} seconds left`;
+    }
+    timeLeft -= 1;
+    }, 1000);
+    }
+
+function timer2(){
+    let sec = 0;
+    timer = setInterval(() =>{
+        countdownEl.innerHTML = "00: "+sec;
+        sec++;
+    }, 1000)
+
 }
+
+
+
 
 
 
@@ -58,7 +72,7 @@ startgGameBtn.addEventListener("click", () => {
         loadingScreen.classList.remove("displayNone")
       })
       .then((x) => {
-        setInterval(() => {
+        setTimeout(() => {
             loadingScreen.classList.add("displayNone");
             gameScreen.classList.remove("displayNone")
             timer()
@@ -128,7 +142,7 @@ const apiURL = `https://api.unsplash.com/search/photos?&query=France&client_id=$
 
 function backupFetch(){
     const backupKey = "PZNu91ajpfe_CUsdTI0wI70EEM0B4EPL2ZKpbZqNBtw"
-    fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Landmarks&client_id=${backupKey}&count=${count}`)
+    fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Culture&client_id=${backupKey}&count=${count}`)
     .then((res) => res.json())
     .then((data) => rand3(data))
     .catch((error) => backupFetch2()) 
@@ -136,7 +150,7 @@ function backupFetch(){
 
 function backupFetch2(){
     const backupKey = "50FzKJR1ap80aUKbYcW2zX-gSVEavBCNHn5uGhA6P6E"
-    fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Landmarks&client_id=${backupKey}&count=${count}`)
+    fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Culture&client_id=${backupKey}&count=${count}`)
     .then((res) => res.json())
     .then((data) => rand3(data))
     .catch((error) => console.log(error)) 
@@ -144,7 +158,7 @@ function backupFetch2(){
 
 // function that fetches the pexel images
 function fetchUnsplash(country){
-fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Landmarks&client_id=${apiKey}&count=${count}`)
+fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Culture&client_id=${apiKey}&count=${count}`)
 .then((res) => res.json())
 .then((data) => rand3(data))
 .catch((error) => backupFetch())

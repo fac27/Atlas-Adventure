@@ -144,8 +144,8 @@ nav{
 
      #countdown{
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 20;
+        right: 20;
      }
 
      .startScreen{
