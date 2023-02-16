@@ -100,17 +100,39 @@ function appendLocation(array){
       }
 }
 
+const count = 5;
+const apiKey = "5Jw2_Dj9jSVoB3h0kbFkucCmwcjCnWKKMbnMYT0sYyY";
+const apiURL = `https://api.unsplash.com/search/photos?&query=France&client_id=${apiKey}&count=${count}`;
+// const apiURL = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
+// const client = "LtnnQlk8Wc7E0Wecjc6fvwhx1Fjeztj1CIUpuuJdqfQ3pbWhlEiZAYjm"     
+// fetch(`https://api.pexels.com/v1/search?query=${chosenCountry.name.common} landmarks?page=1&per_page=10`,{
+// headers: {
+// Authorization: client,
+// }
+// })
+
+function backupFetch(){
+    const backupKey = "PZNu91ajpfe_CUsdTI0wI70EEM0B4EPL2ZKpbZqNBtw"
+    fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Landmarks&client_id=${backupKey}&count=${count}`)
+    .then((res) => res.json())
+    .then((data) => rand3(data))
+    .catch((error) => backupFetch2()) 
+}
+
+function backupFetch2(){
+    const backupKey = "50FzKJR1ap80aUKbYcW2zX-gSVEavBCNHn5uGhA6P6E"
+    fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Landmarks&client_id=${backupKey}&count=${count}`)
+    .then((res) => res.json())
+    .then((data) => rand3(data))
+    .catch((error) => console.log(error)) 
+}
+
 // function that fetches the pexel images
 function fetchUnsplash(country){
-const client = "LtnnQlk8Wc7E0Wecjc6fvwhx1Fjeztj1CIUpuuJdqfQ3pbWhlEiZAYjm"     
-fetch(`https://api.pexels.com/v1/search?query=${chosenCountry.name.common} landmarks?page=1&per_page=10`,{
-headers: {
-Authorization: client,
-}
-})
+fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Landmarks&client_id=${apiKey}&count=${count}`)
 .then((res) => res.json())
 .then((data) => rand3(data))
-.catch((error) => console.log(error))
+.catch((error) => backupFetch())
 }
 
 
@@ -140,11 +162,11 @@ function rand2(array){
 function rand3(array){
     const countriesImages = [];
     for(let i = 0; i < 2; i++){
-        const randomNumb = Math.floor(Math.random()*array.photos.length)
-        countriesImages.push(array.photos[randomNumb].src.medium);
+        const randomNumb = Math.floor(Math.random()*array.results.length)
+        countriesImages.push(array.results[randomNumb].urls.regular);
      }
      appendLocation(countriesImages);
-    console.log(countriesImages)
+    console.log(array)
      return countriesImages
     // console.log(array.results[0])
 }
