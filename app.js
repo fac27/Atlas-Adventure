@@ -32,20 +32,8 @@ const loadingScreen = document.querySelector("#loadingScreen")
 const gameScreen = document.querySelector("#game-Screen")
 const countdownEl = document.getElementById('countdown');
 let timeLeft = 30;
-let chosenCountry;
-let score = 0;
 
-function timer(){
-    const countdown = setInterval(() => {
-        if (timeLeft <= 0) {
-          clearInterval(countdown);
-          countdownEl.innerHTML = "Time's up!";
-        } else {
-          countdownEl.innerHTML = `${timeLeft} seconds left`;
-        }
-        timeLeft -= 1;
-      }, 1000);
-}
+let chosenCountry;
 
 
 
@@ -61,14 +49,6 @@ function timer(){
     }, 1000);
     }
 
-function timer2(){
-    let sec = 0;
-    timer = setInterval(() =>{
-        countdownEl.innerHTML = "00: "+sec;
-        sec++;
-    }, 1000)
-
-}
 
 
 
@@ -100,8 +80,6 @@ for(let i = 0; i < flagImages.length; i++ ){
         if(flagImages[i].id == chosenCountry.name.common){
             alert("correct")
             fetchCountryData()
-            score++;
-            document.querySelector("#scoreDisplay").textContent = score;
     } else{
         alert("incorrect")
     }
