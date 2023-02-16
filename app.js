@@ -34,6 +34,18 @@ const countdownEl = document.getElementById('countdown');
 let timeLeft = 30;
 let chosenCountry;
 
+function timer(){
+    const countdown = setInterval(() => {
+        if (timeLeft <= 0) {
+          clearInterval(countdown);
+          countdownEl.innerHTML = "Time's up!";
+        } else {
+          countdownEl.innerHTML = `${timeLeft} seconds left`;
+        }
+        timeLeft -= 1;
+      }, 1000);
+}
+
 
 
 function timer(){
