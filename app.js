@@ -30,7 +30,21 @@ const startgGameBtn = document.querySelector("#startGameBtn");
 const startGameScreen = document.querySelector("#startGameScreen");
 const loadingScreen = document.querySelector("#loadingScreen")
 const gameScreen = document.querySelector("#game-Screen")
+const countdownEl = document.getElementById('countdown');
+let timeLeft = 30;
 let chosenCountry;
+
+function timer(){
+    const countdown = setInterval(() => {
+        if (timeLeft <= 0) {
+          clearInterval(countdown);
+          countdownEl.innerHTML = "Time's up!";
+        } else {
+          countdownEl.innerHTML = `${timeLeft} seconds left`;
+        }
+        timeLeft -= 1;
+      }, 1000);
+}
 
 
 
@@ -47,6 +61,7 @@ startgGameBtn.addEventListener("click", () => {
         setInterval(() => {
             loadingScreen.classList.add("displayNone");
             gameScreen.classList.remove("displayNone")
+            timer()
         }, 3000);
       })
 })

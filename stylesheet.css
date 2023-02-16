@@ -139,6 +139,13 @@ nav{
         min-height: 70vh;
         height: auto;
         flex-direction: column;
+        position: relative;
+     }
+
+     #countdown{
+        position: absolute;
+        top: 0;
+        right: 0;
      }
 
      .startScreen{
