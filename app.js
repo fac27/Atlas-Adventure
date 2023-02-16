@@ -33,6 +33,7 @@ const gameScreen = document.querySelector("#game-Screen")
 const countdownEl = document.getElementById('countdown');
 let timeLeft = 30;
 let chosenCountry;
+let score = 0;
 
 function timer(){
     const countdown = setInterval(() => {
@@ -99,6 +100,8 @@ for(let i = 0; i < flagImages.length; i++ ){
         if(flagImages[i].id == chosenCountry.name.common){
             alert("correct")
             fetchCountryData()
+            score++;
+            document.querySelector("#scoreDisplay").textContent = score;
     } else{
         alert("incorrect")
     }
