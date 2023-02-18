@@ -54,7 +54,6 @@ body{
 .container{
     width: 100%;
     height: auto;
-    background-color: whitesmoke;
     border: var(--charcoal);
     margin: 10px 0px;
 
@@ -130,7 +129,7 @@ header{
 /* Main section */
 
     main{
-        width: 70%;
+        width: 90%;
         min-height: 70vh;
         height: auto;
         flex-direction: column;
@@ -186,6 +185,7 @@ header{
         width: 90%;
         height: 100vh;
         text-align: center;
+        color: white;
      }
 
      figure{
@@ -199,6 +199,8 @@ header{
         width: 80%;
         height: 80%;
         object-fit: cover;
+        border: 0.1875rem solid black;
+        border-width: 0 0 0.1875rem 0.1875rem;
      }
 
     /* Style for the flag tooltip */
@@ -247,11 +249,25 @@ color: red;
     height: 125px;
 }
 
+@media (max-width: 800px){
+    main{
+        width: 100%;
+        min-height: 70vh;
+        height: auto;
+    }
+
+    .LocationImg {
+        width: 90%;
+        background-position: center center;
+    }
+}
+
 @media (max-width: 650px) {
     /* Header/nav css */
 header{
     max-width: 650px;
 }
+
 .nav-toggle-label{
     display: block;
 }
