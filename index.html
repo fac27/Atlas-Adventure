@@ -10,9 +10,18 @@
     <header class="flexCenter">
         <img id="GameInfo" src="assets\info.png" alt="game info">
         <img class="Logo" src="assets\Logo.png" alt="Logo">
-        <div id="scoreDisplay">0</div>
+        <div class="scores">
+            <div id="highScoreDisplay">High Score: <span id="bestScore">0</span></div>
+            <div id="scoreDisplay">0</div>
+        </div>
     </header>
     <main class="flexCenter">
+        <div id="gameStat" class="container flexCenter flex-column small-vh displayNone">
+            <h2>Game Over</h2>
+            <h2>High Score: <span id="highScore">20</span> Points</h2>
+            <h2>Total Score: <span id="TotalScore">10</span> Points</h2>
+            <button>Play Again</button>
+          </div>
         <div id="countdown"></div>
         <div id="startGameScreen" class="startScreen flex-evenly">
             <img class="GlobeImage" src="assets\globe-13361.png" alt="Globe Image">
@@ -29,7 +38,7 @@
                 <h2>Continent: <span class="facts">Region</span></h2>
                 <h2>Currency Symbol: <span class="facts">Currency</span></h2>
             </div>
-            <div id="imageContainer" class="container flex-evenly flex-Row padding-l">
+            <div id="imageContainer" class="container container2 flex-evenly padding-sm">
                 <figure class="flexCenter">
                     <img class="LocationImg" src="" alt="image of country">
                 </figure>
@@ -41,19 +50,19 @@
             <section id="flagContainer" class="container flex-evenly flex-Row padding-sm">
                 <div>
                     <img class="flagImages" src="">
-                    <h1 class="flagName"></h1>
+                    <h3 class="flagName"></h3>
                 </div>
                 <div>
                     <img class="flagImages" src="">
-                    <h1 class="flagName"></h1>
+                    <h3 class="flagName"></h3>
                 </div>
                 <div>
                     <img class="flagImages" src="">
-                    <h1 class="flagName"></h1>
+                    <h3 class="flagName"></h3>
                 </div>
                 <div>
                     <img class="flagImages" src="">
-                    <h1 class="flagName"></h1>
+                    <h3 class="flagName"></h3>
                 </div>
             </section>
         </section>
@@ -64,6 +73,7 @@
             <p id="countryNameText">correctCountry</p>
             <button class="continue padding-sm margin-bottom-m">Continue</button>
           </section>
+
     </main>
     <script src="app.js"></script>
 </body>

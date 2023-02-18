@@ -31,12 +31,24 @@ const startGameScreen = document.querySelector("#startGameScreen");
 const loadingScreen = document.querySelector("#loadingScreen")
 const gameScreen = document.querySelector("#game-Screen")
 const countdownEl = document.getElementById('countdown');
-let timeLeft = 30;
+let timeLeft = 60;
 const audioSuccess = new Audio('assets/short-success-sound-glockenspiel-treasure-video-game-6346.mp3');
 const audioFail = new Audio("assets/negative_beeps-6008.mp3")
+const EndGame = document.querySelector("#gameStat");
+let totalScore = document.querySelector("#TotalScore");
+let bestScore = document.querySelector("#highScore");
+let headerHighScore = document.querySelector("#bestScore");
+let highScore = 0;
 let score = 0;  
-
 let chosenCountry;
+
+if(localStorage.getItem("highScore") === null){
+    highScore = 0;
+}else{
+   highScore = localStorage.getItem("highScore");
+   headerHighScore.innerHTML = localStorage.getItem("highScore");
+}
+
 
 
 
@@ -46,7 +58,7 @@ function timer(){
     clearInterval(countdown);
     countdownEl.innerHTML = "Time's up!";
     } else {
-    countdownEl.innerHTML = `${timeLeft} seconds left`;
+    countdownEl.innerHTML = `00:${timeLeft}`;
     }
     timeLeft -= 1;
     }, 1000);
@@ -76,6 +88,14 @@ startgGameBtn.addEventListener("click", () => {
       })
 })
 
+function gameEnd(){
+    gameScreen.classList.add("displayNone");
+    countdownEl.classList.add("displayNone")
+    EndGame.classList.remove("displayNone");
+    totalScore.innerHTML = score;
+    bestScore.innerHTML = highScore;
+}
+
 
 for(let i = 0; i < flagImages.length; i++ ){
     flagImages[i].addEventListener("click", function(){
@@ -83,22 +103,17 @@ for(let i = 0; i < flagImages.length; i++ ){
             audioSuccess.play();
             fetchCountryData();
             score++;
+            if(score > highScore) {
+                highScore = score; 
+                localStorage.setItem("highScore", highScore);
+            }
             document.querySelector("#scoreDisplay").textContent = score
     } else{
         audioFail.play();
+        gameEnd();
     }
 })
 }
-
-window.addEventListener("resize", function() {
-    if (window.innerWidth < 650){
-        imageContainer.classList.remove("flex-Row");
-        imageContainer.classList.add("flex-column")
-    } else{
-        imageContainer.classList.remove("flex-column")
-        imageContainer.classList.add("flex-Row");
-    }
-  });
 
 //  All Functions
 
