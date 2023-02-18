@@ -135,7 +135,7 @@ const apiURL = `https://api.unsplash.com/search/photos?&query=France&client_id=$
 
 function backupFetch(){
     const backupKey = "PZNu91ajpfe_CUsdTI0wI70EEM0B4EPL2ZKpbZqNBtw"
-    fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Culture&client_id=${backupKey}&count=${count}`)
+    fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Landmarks&client_id=${backupKey}&count=${count}`)
     .then((res) => res.json())
     .then((data) => rand3(data))
     .catch((error) => backupFetch2()) 
@@ -143,7 +143,7 @@ function backupFetch(){
 
 function backupFetch2(){
     const backupKey = "50FzKJR1ap80aUKbYcW2zX-gSVEavBCNHn5uGhA6P6E"
-    fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Culture&client_id=${backupKey}&count=${count}`)
+    fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Landmarks&client_id=${backupKey}&count=${count}`)
     .then((res) => res.json())
     .then((data) => rand3(data))
     .catch((error) => console.log(error)) 
@@ -151,7 +151,7 @@ function backupFetch2(){
 
 // function that fetches the pexel images
 function fetchUnsplash(country){
-fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Culture&client_id=${apiKey}&count=${count}`)
+fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Landmarks&client_id=${apiKey}&count=${count}`)
 .then((res) => res.json())
 .then((data) => rand3(data))
 .catch((error) => backupFetch())
