@@ -32,6 +32,8 @@ const loadingScreen = document.querySelector("#loadingScreen")
 const gameScreen = document.querySelector("#game-Screen")
 const countdownEl = document.getElementById('countdown');
 let timeLeft = 30;
+const audioSuccess = new Audio('assets/short-success-sound-glockenspiel-treasure-video-game-6346.mp3');
+const audioFail = new Audio("assets/negative_beeps-6008.mp3")
 
 let chosenCountry;
 
@@ -78,10 +80,10 @@ startgGameBtn.addEventListener("click", () => {
 for(let i = 0; i < flagImages.length; i++ ){
     flagImages[i].addEventListener("click", function(){
         if(flagImages[i].id == chosenCountry.name.common){
-            alert("correct")
-            fetchCountryData()
+            audioSuccess.play();
+            fetchCountryData();
     } else{
-        alert("incorrect")
+        audioFail.play();
     }
 })
 }
