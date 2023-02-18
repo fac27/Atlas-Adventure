@@ -77,7 +77,6 @@ startgGameBtn.addEventListener("click", () => {
 })
 
 
-
 for(let i = 0; i < flagImages.length; i++ ){
     flagImages[i].addEventListener("click", function(){
         if(flagImages[i].id == chosenCountry.name.common){
