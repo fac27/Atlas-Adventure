@@ -28,12 +28,14 @@ const facts = document.getElementsByClassName("facts");
 const locationImg = document.getElementsByClassName("LocationImg");
 const startgGameBtn = document.querySelector("#startGameBtn");
 const startGameScreen = document.querySelector("#startGameScreen");
+const countdownElement = document.querySelector("#loadingScreen div:nth-child(1)");
 const loadingScreen = document.querySelector("#loadingScreen")
 const gameScreen = document.querySelector("#game-Screen")
 const countdownEl = document.getElementById('countdown');
 let timeLeft = 60;
 const audioSuccess = new Audio('assets/short-success-sound-glockenspiel-treasure-video-game-6346.mp3');
 const audioFail = new Audio("assets/negative_beeps-6008.mp3")
+
 const EndGame = document.querySelector("#gameStat");
 let totalScore = document.querySelector("#TotalScore");
 let bestScore = document.querySelector("#highScore");
@@ -64,7 +66,18 @@ function timer(){
     }, 1000);
     }
 
-
+let countdown = countdownDuration;
+  const intervalId = setInterval(() => {
+    countdown--;
+    if (countdown === 0) {
+      clearInterval(intervalId);
+      // Hide the countdown element
+      countdownElement.textContent = "Go!";
+    } else {
+      // Update the countdown element
+      countdownElement.textContent = countdown;
+    }
+  }, 1000);
 
 
 
