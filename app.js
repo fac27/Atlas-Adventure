@@ -32,11 +32,12 @@ const countdownElement = document.querySelector("#loadingScreen div:nth-child(1)
 const loadingScreen = document.querySelector("#loadingScreen")
 const gameScreen = document.querySelector("#game-Screen")
 const countdownEl = document.getElementById('countdown');
+const countdownDuration = 4;
 let timeLeft = 30;
 const audioSuccess = new Audio('assets/short-success-sound-glockenspiel-treasure-video-game-6346.mp3');
 const audioFail = new Audio("assets/negative_beeps-6008.mp3")
 let score = 0;
-const countdownDuration = 4;
+
 
 
 let chosenCountry;
