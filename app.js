@@ -35,7 +35,7 @@ const countdownEl = document.getElementById('countdown');
 let timeLeft = 60;
 const audioSuccess = new Audio('assets/short-success-sound-glockenspiel-treasure-video-game-6346.mp3');
 const audioFail = new Audio("assets/negative_beeps-6008.mp3")
-
+const playAgain = document.querySelector("#playAgain");
 const EndGame = document.querySelector("#gameStat");
 let totalScore = document.querySelector("#TotalScore");
 let bestScore = document.querySelector("#highScore");
@@ -66,18 +66,18 @@ function timer(){
     }, 1000);
     }
 
-let countdown = countdownDuration;
-  const intervalId = setInterval(() => {
-    countdown--;
-    if (countdown === 0) {
-      clearInterval(intervalId);
-      // Hide the countdown element
-      countdownElement.textContent = "Go!";
-    } else {
-      // Update the countdown element
-      countdownElement.textContent = countdown;
-    }
-  }, 1000);
+// let countdown = countdownDuration;
+//   const intervalId = setInterval(() => {
+//     countdown--;
+//     if (countdown === 0) {
+//       clearInterval(intervalId);
+//       // Hide the countdown element
+//       countdownElement.textContent = "Go!";
+//     } else {
+//       // Update the countdown element
+//       countdownElement.textContent = countdown;
+//     }
+//   }, 1000);
 
 
 
@@ -101,12 +101,26 @@ startgGameBtn.addEventListener("click", () => {
       })
 })
 
+playAgain.addEventListener("click", function(){
+    restartGame();
+})
+
 function gameEnd(){
     gameScreen.classList.add("displayNone");
     countdownEl.classList.add("displayNone")
     EndGame.classList.remove("displayNone");
     totalScore.innerHTML = score;
     bestScore.innerHTML = highScore;
+}
+
+function restartGame(){
+    fetchCountryData();
+    timeLeft = 60;
+    EndGame.classList.add("displayNone");
+    gameScreen.classList.remove("displayNone");
+    countdownEl.classList.remove("displayNone")
+    score = 0;
+    document.querySelector("#scoreDisplay").textContent = score
 }
 
 
