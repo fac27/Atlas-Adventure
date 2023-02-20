@@ -13,8 +13,8 @@
 
 ### Why?
 
-- This repo exists to hold the code for our app Atlas Adventure
-- It provides users a chance to try out the app and view our progress building
+- This repo exists to hold the code for our game Atlas Adventure
+- It provides users a chance to try out the app and view our steps to build it
 - It also shows our progress towards meeting the learning outcomes for our HTTP Project
 
 ### What?
