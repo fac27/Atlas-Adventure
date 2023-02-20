@@ -165,7 +165,7 @@ function appendFacts(array){
 // function to append the images from the api
 function appendLocation(array){
     for(let x = 0; x < array.length; x++){
-        locationImg[x].src = array[x];
+        locationImg[x].src = array[x].urls.regular;
       }
 }
 
@@ -232,7 +232,14 @@ function rand3(array){
     const countriesImages = [];
     for(let i = 0; i < 2; i++){
         const randomNumb = Math.floor(Math.random()*array.results.length)
-        countriesImages.push(array.results[randomNumb].urls.regular);
+        if(countriesImages.length == 0){
+            countriesImages.push(array.results[randomNumb]);
+        } else if(array.results[randomNumb].id == countriesImages[0].id){
+            const randomNumb2 = Math.floor(Math.random()*array.results.length)
+            countriesImages.push(array.results[randomNumb2])
+        } else{
+            countriesImages.push(array.results[randomNumb])
+        }
      }
      appendLocation(countriesImages);
     console.log(array)
