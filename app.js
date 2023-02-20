@@ -43,6 +43,7 @@ let headerHighScore = document.querySelector("#bestScore");
 let highScore = 0;
 let score = 0;  
 let chosenCountry;
+const countdownDuration = 4;
 
 if(localStorage.getItem("highScore") === null){
     highScore = 0;
@@ -66,18 +67,18 @@ function timer(){
     }, 1000);
     }
 
-// let countdown = countdownDuration;
-//   const intervalId = setInterval(() => {
-//     countdown--;
-//     if (countdown === 0) {
-//       clearInterval(intervalId);
-//       // Hide the countdown element
-//       countdownElement.textContent = "Go!";
-//     } else {
-//       // Update the countdown element
-//       countdownElement.textContent = countdown;
-//     }
-//   }, 1000);
+let countdown = countdownDuration;
+  const intervalId = setInterval(() => {
+    countdown--;
+    if (countdown === 0) {
+      clearInterval(intervalId);
+      // Hide the countdown element
+      countdownElement.textContent = "Go!";
+    } else {
+      // Update the countdown element
+      countdownElement.textContent = countdown;
+    }
+  }, 1000);
 
 
 
