@@ -60,6 +60,7 @@ function timer(){
   if (timeLeft <= 0) {
     clearInterval(countdown);
     countdownEl.innerHTML = "Time's up!";
+    gameEnd();
     } else {
     countdownEl.innerHTML = `00:${timeLeft}`;
     }
