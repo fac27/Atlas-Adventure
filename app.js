@@ -1,34 +1,13 @@
-// function(){} create the DOM elements we need and append country information to these 
-
-/* function() {}We would now retrieve the name, region, currency and neighbouring countries properties, displaying this in the DOM using a
- div and assign the name property as the id for verifaction
-*/
-
-/* function (){} from this main country we've chosen, we would use the name as an argument to make a fetch() to 
-Unsplash which we'd display in the DOM */ 
-
-/* function(){} from the 2 countries that are selected we then retrieve the name and flag/img property and create cards
-with the image of the flag and use the name of the country as the id for the card that would for verifaction
-*/
-
-/* function(){} to verify if users selected country is the main/correct country if verified country is correct display alert 
-stating "you choose correct country" and vise versa
-*/
-
-/*  function() {} if users selected option is correct increment scoreboard by 1 and regenerate the all the function to allow user to play another round*/
-
-/*  function() {} if users selected option is incorrect make scoreboard go to 0 and display startgame screen*/
-
-// DOM Elements
+// DOM elements & global variables
 
 const imageContainer = document.querySelector("#imageContainer");
 const flagImages = document.getElementsByClassName("flagImages");
 const flagName = document.getElementsByClassName("flagName");
 const facts = document.getElementsByClassName("facts");
 const locationImg = document.getElementsByClassName("LocationImg");
-const startgGameBtn = document.querySelector("#startGameBtn");
+const startGameBtn = document.querySelector("#startGameBtn");
 const startGameScreen = document.querySelector("#startGameScreen");
-const countdownElement = document.querySelector("#loadingScreen div:nth-child(1)");
+const loadingElement = document.querySelector("#loadingScreen div:nth-child(1)");
 const loadingScreen = document.querySelector("#loadingScreen")
 const gameScreen = document.querySelector("#game-Screen")
 const countdownEl = document.getElementById('countdown');
@@ -44,6 +23,11 @@ let highScore = 0;
 let score = 0;  
 let chosenCountry;
 const countdownDuration = 4;
+const count = 5;
+const apiKey = "5Jw2_Dj9jSVoB3h0kbFkucCmwcjCnWKKMbnMYT0sYyY";
+const apiURL = `https://api.unsplash.com/search/photos?&query=France&client_id=${apiKey}&count=${count}`;
+
+// High Score local storage
 
 if(localStorage.getItem("highScore") === null){
     highScore = 0;
@@ -51,9 +35,6 @@ if(localStorage.getItem("highScore") === null){
    highScore = localStorage.getItem("highScore");
    headerHighScore.innerHTML = localStorage.getItem("highScore");
 }
-
-
-
 
 function timer(){
     const countdown = setInterval(() => {
@@ -68,40 +49,25 @@ function timer(){
     }, 1000);
     }
 
-let countdown = countdownDuration;
-  const intervalId = setInterval(() => {
-    countdown--;
-    if (countdown === 0) {
-      clearInterval(intervalId);
-      // Hide the countdown element
-      countdownElement.textContent = "Go!";
-    } else {
-      // Update the countdown element
-      countdownElement.textContent = countdown;
-    }
-  }, 1000);
-
-
-
-
-
 // Event Listeners
-startgGameBtn.addEventListener("click", () => {
-    async function removeClasees() {
-        return startGameScreen.classList.add("displayNone");
-      }
-      removeClasees()
-      .then((x) => {
-        loadingScreen.classList.remove("displayNone")
-      })
-      .then((x) => {
-        setTimeout(() => {
-            loadingScreen.classList.add("displayNone");
-            gameScreen.classList.remove("displayNone")
-            timer()
-        }, 3000);
-      })
-})
+startGameBtn.addEventListener("click", () => {
+  async function removeClasses() {
+    startGameScreen.classList.add("displayNone");
+  }
+  removeClasses().then(() => {
+    loadingScreen.classList.remove("displayNone");
+  }).then(() => {
+    loadingElement.textContent = "Ready...";
+    setTimeout(() => {
+      loadingElement.textContent = "Go!";
+      loadingElement.style.fontSize = "48px";
+      setTimeout(() => {
+        loadingScreen.classList.add("displayNone");
+        gameScreen.classList.remove("displayNone");
+      }, 1000);
+    }, 2000);
+  });
+});
 
 playAgain.addEventListener("click", function(){
     restartGame();
@@ -160,9 +126,10 @@ function appendFacts(array){
     const keys = Object.keys(array.currencies);
     const firstKey = keys[0];
   facts[0].innerHTML = array.continents;
-  facts[1].innerHTML =  array.currencies[firstKey].symbol ;
+  facts[1].innerHTML = array.currencies[firstKey].symbol;
   console.log(firstKey)
 }
+
 // function to append the images from the api
 function appendLocation(array){
     for(let x = 0; x < array.length; x++){
@@ -170,9 +137,6 @@ function appendLocation(array){
       }
 }
 
-const count = 5;
-const apiKey = "5Jw2_Dj9jSVoB3h0kbFkucCmwcjCnWKKMbnMYT0sYyY";
-const apiURL = `https://api.unsplash.com/search/photos?&query=France&client_id=${apiKey}&count=${count}`;
 // const apiURL = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 // const client = "LtnnQlk8Wc7E0Wecjc6fvwhx1Fjeztj1CIUpuuJdqfQ3pbWhlEiZAYjm"     
 // fetch(`https://api.pexels.com/v1/search?query=${chosenCountry.name.common} landmarks?page=1&per_page=10`,{
@@ -197,7 +161,7 @@ function backupFetch2(){
     .catch((error) => console.log(error)) 
 }
 
-// function that fetches the pexel images
+// function that fetches the unsplash images
 function fetchUnsplash(country){
 fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common} Landmarks&client_id=${apiKey}&count=${count}`)
 .then((res) => res.json())
@@ -205,8 +169,7 @@ fetch(`https://api.unsplash.com/search/photos?&query=${chosenCountry.name.common
 .catch((error) => backupFetch())
 }
 
-
-// function(){} randomiser function which selects 2 of the countries from the array, and puts these into the  
+// randomiser function which selects countries from the array  
 function rand1(array){
     const countriesArray = [];
  for(let i = 0; i < 4; i++){
@@ -218,8 +181,7 @@ function rand1(array){
  return(countriesArray);
 }
 
-
-// function(){} second randomiser would then choose one main country from the 2 selected 
+// second randomiser which then chooses one main country from the 2 selected 
 function rand2(array){
     const randomNumb = Math.floor(Math.random()*array.length)
     chosenCountry = array[randomNumb];
@@ -228,7 +190,7 @@ function rand2(array){
     return chosenCountry;
 }
 
-// function third randomiser would then choose 2 images from the fetch images api and append to the dom
+// third randomiser function which then chooses 2 images from the fetch images api and appends to the dom
 function rand3(array){
     const countriesImages = [];
     for(let i = 0; i < 2; i++){
@@ -247,7 +209,6 @@ function rand3(array){
      return countriesImages
     // console.log(array.results[0])
 }
-
 
 // fetch() to countries API - which generate the initaial countries and starts the game
 function fetchCountryData(){
