@@ -6,7 +6,6 @@
 - [Prototype](#prototype)
 - [Spike](#spike)
 - [Learning Outcomes](#learning-outcomes)
-- [Stretch Goals](#stretch-goals)
 - [How to install](#how-to-install)
 
 ## About the Repo
@@ -29,13 +28,7 @@
 ## Prototype
 
 - We wanted to focus on two things, **interactivity** and **reusability**
-- With this in mind, our idea for a country guessing game came about
 - Our wireframes focused on replicating the experience across devices, and was built with mobile-first in mind
-- The structure for the app was simple: 
-    1. A landing page to welcome the user
-    2. A loading screen to indicate the game (and APIs) are loading
-    3. A game screen, displaying country facts, images, and flags
-    4. A success/fail screen, showing the users points tally and letting them continue to the next challenge
 
 ### Wireframes
 
@@ -92,10 +85,6 @@
 
 - [x] Debug client side JS in our web browser
 - [x] Use console.log() to help us debug our code
-
-## Stretch Goals
-
-- Implement an extra section into the nav bar (perhaps a country information page fetching data from both APIs)
 
 ## How to Install
 
