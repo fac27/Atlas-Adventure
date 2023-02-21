@@ -192,8 +192,11 @@ header{
 
      .loadingScreen{
         background-color: turquoise;
-        width: 90%;
+        width: 60%;
+        max-height: 70vh;
+        height: auto;
         margin: 20px 0px;
+        text-align: center;
      }
 
      .GameScreen{
