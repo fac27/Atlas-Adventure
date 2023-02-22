@@ -24,6 +24,7 @@ let score = 0;
 let chosenCountry;
 const countdownDuration = 4;
 const count = 5;
+let countdown;
 const apiKey = "5Jw2_Dj9jSVoB3h0kbFkucCmwcjCnWKKMbnMYT0sYyY";
 const apiURL = `https://api.unsplash.com/search/photos?&query=France&client_id=${apiKey}&count=${count}`;
 
@@ -37,13 +38,13 @@ if(localStorage.getItem("highScore") === null){
 }
 
 function timer(){
-    const countdown = setInterval(() => {
+    countdown = setInterval(() => {
   if (timeLeft <= 0) {
     clearInterval(countdown);
     countdownEl.innerHTML = "Time's up!";
     gameEnd();
     } else {
-    countdownEl.innerHTML = `00:${timeLeft}`;
+    countdownEl.innerHTML = timeLeft;
     }
     timeLeft -= 1;
     }, 1000);
@@ -64,6 +65,7 @@ startGameBtn.addEventListener("click", () => {
       setTimeout(() => {
         loadingScreen.classList.add("displayNone");
         gameScreen.classList.remove("displayNone");
+        timer()
       }, 1000);
     }, 2000);
   });
@@ -71,14 +73,17 @@ startGameBtn.addEventListener("click", () => {
 
 playAgain.addEventListener("click", function(){
     restartGame();
+    
 })
 
 function gameEnd(){
+    clearInterval(countdown);
     gameScreen.classList.add("displayNone");
     countdownEl.classList.add("displayNone")
     EndGame.classList.remove("displayNone");
     totalScore.innerHTML = score;
     bestScore.innerHTML = highScore;
+    
 }
 
 function restartGame(){
@@ -87,8 +92,10 @@ function restartGame(){
     EndGame.classList.add("displayNone");
     gameScreen.classList.remove("displayNone");
     countdownEl.classList.remove("displayNone")
+    countdownEl.innerHTML = timeLeft;
     score = 0;
     document.querySelector("#scoreDisplay").textContent = score
+    timer()
 }
 
 
